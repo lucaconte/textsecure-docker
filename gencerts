@@ -1,5 +1,5 @@
 #/bin/bash
-
+#java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,address=9000,suspend=y 
 #This script creates root CA and server certificates to be used by the client and the server.
 # rootCA.crt needs to be copied to the client to replace the system-wide root CA set
 # example.keystore needs to be referenced by keyStorePath in the server's config file
@@ -7,8 +7,8 @@
 #TO EXECUTE FROM THE OUTSIDE WITH:
 #ALTNAME=DNS:signal.sinesy.it ./gencerts
 #
-#IF YOU HAVE A DOMAIN OR
-#ALTNAME=DNS:signal.sinesy.it ./gencerts
+#IF YOU HAVE A DOMAIN OR IP if U are in a lan
+#ALTNAME=IP:10.1.4.218 ./gencerts
 #
 #
 # Create private key for root CA certificate

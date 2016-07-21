@@ -41,7 +41,7 @@ openssl pkcs12 -export -password pass:example -in whisper.crt -inkey whisper.key
 keytool -importkeystore -srcstoretype PKCS12 -srckeystore keystore.p12 -srcstorepass example -destkeystore example.keystore -deststorepass example
 
 #whisper.store DEVE andare dentro il client andropid
-keytool -importcert -v -trustcacerts -file whisper.crt -alias IntermediateCA -keystore whisper.store -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath ~/data/java/Signal_prj/bcprov-jdk15on-154.jar -storetype BKS -storepass whisper
+keytool -importcert -v -trustcacerts -file whisper.crt -alias IntermediateCA -keystore whisper.store -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath ../bcprov-jdk15on-154.jar -storetype BKS -storepass whisper
 
 #per il client iOS basta convertire il whisper.crt in formato DER e installare whisper.cer in iOS
 openssl x509 -in whisper.crt -out whisper.cer -outform DER
